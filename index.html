@@ -10,14 +10,15 @@
       integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>TO DO LIST</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="container">
+        <h1>TO DO LIST</h1>
         <!-- creo un input per aggiungere un item alla to do list (con tasto invio aggiungo item)-->
-        <input type="text" v-model="temporaryItem" @keyup.enter="addItem"/>
+        <input class="window-input" type="text" v-model="temporaryItem" @keyup.enter="addItem"/>
         <!-- button aggiungi per aggiungere cosa da fare alla lista -->
         <button class="button" @click="addItem">Aggiungi</button>
         <div class="list-container">
