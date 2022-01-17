@@ -23,6 +23,7 @@ new Vue({
         done: false,
       },
     ],
+    message: '',
     // variabile per salvare il testo digitato nell'input html
     temporaryItem: "",
   },
@@ -31,7 +32,7 @@ new Vue({
     addItem: function () {
         // controllo input
       if (this.temporaryItem === '') {
-        alert("inserisci il testo");
+        this.message="Inserisci il testo";
       } else {
         this.todo.push({ text: this.temporaryItem, done: false });
       }

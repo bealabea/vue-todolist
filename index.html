@@ -18,9 +18,10 @@
     <div id="app" class="container">
         <h1>TO DO LIST</h1>
         <!-- creo un input per aggiungere un item alla to do list (con tasto invio aggiungo item)-->
-        <input class="window-input" type="text" v-model="temporaryItem" @keyup.enter="addItem"/>
+        <input class="window-input" type="text" v-model="temporaryItem" @keyup.enter="addItem" @input="message = ''" required/>
         <!-- button aggiungi per aggiungere cosa da fare alla lista -->
         <button class="button" @click="addItem">Aggiungi</button>
+        <div class="message">{{message}}</div>
         <div class="list-container">
             <ul>
                 <!-- lista di item -> per ogni item nell'array todo stampa in html il text -->
