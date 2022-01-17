@@ -28,7 +28,8 @@
                 <li v-for="(item, i) in todo">
                     <!-- al click del testo togli o aggiungi la classe line-throught
                         a seconda della proprietà done dell'item dell'array (true o false)-->
-                   <p :class="item.done === true ? 'line-through' : ''" @click="changeDone(i)">{{item.text}}</p>
+                        <!-- :class="item:done === true ? 'line-through : ''" -->
+                   <p :class="{'line-through':item.done}" @click="changeDone(i)">{{item.text}}</p>
                    <!-- al click della crocetta rimuovi l'item selezionato -->
                    <div class="close" @click="removeItem(i)"><i class="fas fa-times"></i></div>
                 </li>
