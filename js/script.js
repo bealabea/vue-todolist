@@ -23,16 +23,16 @@ new Vue({
         done: false,
       },
     ],
-    message: '',
+    message: "",
     // variabile per salvare il testo digitato nell'input html
     temporaryItem: "",
   },
   methods: {
     // funzione per aggiungere all'array un nuovo oggetto
     addItem: function () {
-        // controllo input
-      if (this.temporaryItem === '') {
-        this.message="Inserisci il testo";
+      // controllo input
+      if (this.temporaryItem === "") {
+        this.message = "Inserisci il testo";
       } else {
         this.todo.push({ text: this.temporaryItem, done: false });
       }
@@ -43,12 +43,10 @@ new Vue({
       this.todo.splice(index, 1);
     },
     // funzione per cambiare la proprietà done degli oggetti nell'array
-    changeDone: function (index) {
-      if (this.todo[index].done) {
-        this.todo[index].done = false;
-      } else {
-        this.todo[index].done = true;
-      }
+    // this.todo[index].done = !this.todo[index].done (passando argomento index)
+    // più semplice:
+    doneUndone: function (item) {
+      item.done = !item.done;
     },
   },
 });
